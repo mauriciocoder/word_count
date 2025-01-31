@@ -1,0 +1,26 @@
+# Python bytecode files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.swp
+
+# Virtual environments
+.venv/
+env/
+venv/
+
+# Log files
+*.log
+
+# Local IDE configurations
+.idea/
+.vscode/
+
+# node
+node_modules/
+.npm/
+.npmrc
+
+# env
+.env

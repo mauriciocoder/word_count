@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  api:
+    build:
+      context: .
+      dockerfile: dockerfile-api
+    ports:
+      - "${FLASK_PORT}:${FLASK_PORT}"
+    environment:
+      - FLASK_APP=src/api
+      - FLASK_ENV=${FLASK_ENV}
+    command: python -m flask run --host=${FLASK_HOST}
+
+  frontend:
+    build:
+      context: .
+      dockerfile: dockerfile-frontend
+    ports:
+      - "8080:80"
+    depends_on:
+      - api

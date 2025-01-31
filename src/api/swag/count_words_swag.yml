@@ -1,0 +1,23 @@
+tags:
+  - Word Count
+summary: Find the word count for a list of sentences
+parameters:
+  - name: sentences
+    in: body
+    type: array
+    items:
+      type: string
+    required: true
+    description: A list of sentences to count the words in
+responses:
+  200:
+    description: word count
+    examples:
+      application/json:
+        [ 1, 2, 3 ]
+  400:
+    description: bad request
+    examples:
+      application/json:
+        error: Invalid input data
+        details: [ "Details in JSON format" ]
