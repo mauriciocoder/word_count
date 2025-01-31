@@ -2,6 +2,7 @@ import pytest
 
 from src.api.utils import word_count
 
+
 def test_word_count_exceptions():
     with pytest.raises(ValueError):
         word_count(1.23)
@@ -9,6 +10,7 @@ def test_word_count_exceptions():
         word_count(123)
     with pytest.raises(ValueError):
         word_count(None)
+
 
 def test_word_count():
     assert word_count("") == 0
@@ -43,5 +45,14 @@ def test_word_count():
 
     # Long sentence
     assert word_count("hello world. hello world. hello world.") == 6
-    assert word_count("There is nothing either good or bad, but thinking makes it so") == 12
-    assert word_count("This above all: to thine own self be true, And it must follow, as the night the day, Thou canst not then be false to any man") == 27
+    assert (
+        word_count("There is nothing either good or bad, but thinking makes it so")
+        == 12
+    )
+    assert (
+        word_count(
+            "This above all: to thine own self be true, And it must follow, "
+            "as the night the day, Thou canst not then be false to any man"
+        )
+        == 27
+    )

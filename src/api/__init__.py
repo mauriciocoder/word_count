@@ -7,7 +7,7 @@ from .routes import bp
 
 def create_app() -> Flask:
     app = Flask(__name__)
-    CORS(app) # Enable CORS globally for all routes
+    CORS(app)  # Enable CORS globally for all routes
     app.register_blueprint(bp)
     app.logger.setLevel(logging.INFO)
     app.logger.info("Flask application initialized.")

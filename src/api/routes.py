@@ -1,7 +1,5 @@
 from flasgger import swag_from
 from flask import (
-    abort,
-    Request,
     Response,
     Blueprint,
     current_app as app,
@@ -10,6 +8,7 @@ from flask import (
 )
 
 bp = Blueprint("api", __name__)
+
 
 def validate_sentences(sentences: list[str]):
     if not isinstance(sentences, list):
@@ -24,6 +23,7 @@ def validate_sentences(sentences: list[str]):
 @swag_from("swag/count_words_swag.yml")
 def count_words() -> Response:
     from .utils import word_count
+
     sentences = request.json
     try:
         validate_sentences(sentences)
@@ -32,8 +32,6 @@ def count_words() -> Response:
     word_counts = []
     for sentence in sentences:
         count = word_count(sentence)
-        app.logger.info(
-            f"Sentence: {sentence}, Word Count: {count}"
-        )
+        app.logger.info(f"Sentence: {sentence}, Word Count: {count}")
         word_counts.append(count)
     return jsonify(word_counts), 200

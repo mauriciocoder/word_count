@@ -15,9 +15,9 @@ According to [Collins dictionary](https://www.collinsdictionary.com/dictionary/e
 
 "b.  a letter or group of letters representing such a unit of language, *written or printed usually in solid or hyphenated form*"
 
-Notice there is not a canonical definition of what character group can be considered as a word. 
-So in this exercise, I have considered "word" as any grouping of characters which follows 
-the Regex definition of "\w" meta-character (For ASCII, word characters are [a-zA-Z0-9_]) 
+Notice there is not a canonical definition of what character group can be considered as a word.
+So in this exercise, I have considered "word" as any grouping of characters which follows
+the Regex definition of "\w" meta-character (For ASCII, word characters are [a-zA-Z0-9_])
 plus the inclusion of apostrophe and hyphens. So "state-of-the-art" is 1 word and "don't" is 1 word.
 
 ---
