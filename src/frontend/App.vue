@@ -1,8 +1,7 @@
 <template>
   <div class="app-container">
     <h1>Word Count</h1>
-
-    <!-- Form to submit a sentence -->
+    <div><img src="https://voxy.com/wp-content/uploads/2024/05/voxy_logo_horizontal_aqua_purple-1-300x67.webp" alt="Voxy Logo" width="300" height="67"></div>
     <form @submit.prevent="submitSentence" class="form">
       <label for="sentence">Enter a sentence:</label>
       <textarea
@@ -14,13 +13,9 @@
       />
       <button type="submit" class="submit-button">Submit</button>
     </form>
-
-    <!-- Display word count -->
     <div v-if="wordCount !== null" class="word-count">
       <p>Word count: {{ wordCount }}</p>
     </div>
-
-    <!-- Display error message -->
     <div v-if="errorMessage" class="error-message">
       <p>{{ errorMessage }}</p>
     </div>
@@ -30,12 +25,10 @@
 <script setup>
 import { ref } from 'vue';
 
-// Reactive variables
 const sentence = ref('');
 const wordCount = ref(null);
 const errorMessage = ref(null);
 
-// Submit function
 const submitSentence = async () => {
   errorMessage.value = null;
   wordCount.value = null;

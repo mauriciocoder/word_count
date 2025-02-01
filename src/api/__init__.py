@@ -7,7 +7,7 @@ from .routes import bp
 
 def create_app() -> Flask:
     app = Flask(__name__)
-    CORS(app)  # Enable CORS globally for all routes
+    CORS(app)
     app.register_blueprint(bp)
     app.logger.setLevel(logging.INFO)
     app.logger.info("Flask application initialized.")
@@ -20,6 +20,4 @@ def create_app() -> Flask:
     return app
 
 
-# Since FLASK_APP=src/api is set in docker-compose.yml
-# It is required to instantiate the Flask src here (src)
 app = create_app()
